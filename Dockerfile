@@ -12,7 +12,11 @@ WORKDIR ${GOPATH}/src/github.com/vouch/vouch-proxy
 RUN groupadd -g $GID vouch \
     && useradd --system vouch --uid=$UID --gid=$GID
 
-COPY . .
+# To make it work when building as a git submodule
+COPY vouch-proxy .
+RUN rm -f .git
+COPY .git/modules/vouch-proxy ./.git
+RUN sed -i 's/^\tworktree.*//g' .git/config
 
 
 RUN ./do.sh goget
