@@ -17,7 +17,7 @@ require (
 	github.com/theckman/go-securerandom v0.1.1
 	github.com/tsenart/vegeta v12.7.0+incompatible
 	go.uber.org/zap v1.27.0
-	golang.org/x/net v0.22.0
+	golang.org/x/net v0.23.0
 	golang.org/x/oauth2 v0.18.0
 )
 
